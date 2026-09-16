@@ -178,27 +178,28 @@ st.markdown("""
         color: #0F172A !important;
     }
 
-    /* Expanders with Clean White Background & Visible Labels */
+    /* Expanders with Clean White/Light Background & High Contrast Labels */
     div[data-testid="stExpander"] {
-        background-color: #FFFFFF !important;
-        border: 1px solid #CBD5E1 !important;
+        background-color: #F8FAFC !important;
+        border: 1px solid #E2E8F0 !important;
         border-radius: 12px !important;
-        box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04) !important;
+        box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03) !important;
     }
     
     div[data-testid="stExpander"] summary {
-        background-color: #FFFFFF !important;
+        background-color: #F8FAFC !important;
         border-radius: 12px !important;
-        color: #0F172A !important;
+        color: #334155 !important;
         font-weight: 700 !important;
     }
     
     div[data-testid="stExpander"] summary * {
-        color: #0F172A !important;
+        color: #334155 !important;
+        font-weight: 700 !important;
     }
     
     div[data-testid="stExpander"] div[role="region"] {
-        background-color: #FFFFFF !important;
+        background-color: #F8FAFC !important;
         color: #0F172A !important;
     }
 
@@ -231,21 +232,43 @@ st.markdown("""
         color: #475569 !important;
     }
 
-    /* Multiselect / Selectbox & Input Dropdown Controls */
-    div[data-baseweb="select"] > div {
+    /* Form Field Labels */
+    [data-testid="stAppViewContainer"] .main label {
+        color: #475569 !important;
+        font-weight: 600 !important;
+        font-size: 1.05rem !important;
+    }
+
+    /* Multiselect / Selectbox White Dropdown Control ("Choose options") */
+    div[data-baseweb="select"] {
         background-color: #FFFFFF !important;
-        border-color: #CBD5E1 !important;
-        color: #0F172A !important;
         border-radius: 8px !important;
     }
 
-    div[data-baseweb="select"] * {
+    div[data-baseweb="select"] > div {
+        background-color: #F1F5F9 !important;
+        border: 1px solid #E2E8F0 !important;
+        border-radius: 8px !important;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02) !important;
         color: #0F172A !important;
+    }
+
+    div[data-baseweb="select"] > div:hover {
+        border-color: #CBD5E1 !important;
+        background-color: #FFFFFF !important;
+    }
+
+    /* Select Placeholder Text */
+    div[data-baseweb="select"] [data-aria-hidden="true"],
+    div[data-baseweb="select"] span {
+        color: #64748B !important;
     }
 
     div[data-baseweb="popover"], div[data-baseweb="menu"] {
         background-color: #FFFFFF !important;
+        border: 1px solid #CBD5E1 !important;
         color: #0F172A !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
     }
 
     div[data-baseweb="option"] {
@@ -253,10 +276,43 @@ st.markdown("""
         color: #0F172A !important;
     }
 
+    div[data-baseweb="option"]:hover {
+        background-color: #F1F5F9 !important;
+    }
+
     /* Input Numbers and Buttons */
-    div[data-baseweb="input"] input {
-        background-color: #FFFFFF !important;
+    div[data-baseweb="input"] > div {
+        background-color: #F1F5F9 !important;
+        border: 1px solid #E2E8F0 !important;
+        border-radius: 8px !important;
         color: #0F172A !important;
+    }
+
+    div[data-baseweb="input"] input {
+        background-color: #F1F5F9 !important;
+        color: #0F172A !important;
+        font-weight: 600 !important;
+    }
+
+    /* Secondary Buttons (Reset Filters) */
+    button[kind="secondary"],
+    button[type="secondary"],
+    div[data-testid="stButton"] button {
+        background-color: #FFFFFF !important;
+        border: 1px solid #CBD5E1 !important;
+        color: #2563EB !important;
+        font-weight: 700 !important;
+        border-radius: 8px !important;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03) !important;
+        transition: all 0.2s ease !important;
+    }
+
+    button[kind="secondary"]:hover,
+    button[type="secondary"]:hover,
+    div[data-testid="stButton"] button:hover {
+        background-color: #F8FAFC !important;
+        border-color: #2563EB !important;
+        color: #1D4ED8 !important;
     }
     
     /* Table Typography */
