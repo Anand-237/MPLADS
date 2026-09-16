@@ -1,0 +1,305 @@
+{
+  "ingestion_timestamp_utc": "2026-09-16T10:26:58.015379+00:00",
+  "datasets": {
+    "recommended_works.csv": {
+      "filename": "recommended_works.csv",
+      "source_location": "D:\\MPLADS(SIH)\\recommended_works.csv",
+      "target_location": "D:\\MPLADS(SIH)\\data\\raw\\recommended_works.csv",
+      "acquisition_date_utc": "2026-09-16T10:26:59.153249+00:00",
+      "sha256_checksum": "761b3661a463f1d589d5e44498888ede201bb8fe085f2623ff0c0a34b12e2a65",
+      "size_bytes": 18957933,
+      "row_count": 83968,
+      "column_count": 9,
+      "columns": [
+        {
+          "column_name": "Work ID",
+          "data_type": "int64",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "Work Description",
+          "data_type": "str",
+          "null_count": 50,
+          "null_percentage": 0.0595
+        },
+        {
+          "column_name": "MP Name",
+          "data_type": "str",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "Constituency",
+          "data_type": "str",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "State",
+          "data_type": "str",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "Recommended Amount (₹)",
+          "data_type": "float64",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "Recommendation Date",
+          "data_type": "str",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "Has Images",
+          "data_type": "bool",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "IDA",
+          "data_type": "str",
+          "null_count": 0,
+          "null_percentage": 0.0
+        }
+      ]
+    },
+    "completed_works.csv": {
+      "filename": "completed_works.csv",
+      "source_location": "D:\\MPLADS(SIH)\\completed_works.csv",
+      "target_location": "D:\\MPLADS(SIH)\\data\\raw\\completed_works.csv",
+      "acquisition_date_utc": "2026-09-16T10:26:59.632038+00:00",
+      "sha256_checksum": "66fcdbfeb6f859629c0c94850fb1efc654a0f440340a4ec55515681ae686b164",
+      "size_bytes": 10536497,
+      "row_count": 43735,
+      "column_count": 11,
+      "columns": [
+        {
+          "column_name": "Work ID",
+          "data_type": "int64",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "Work Description",
+          "data_type": "str",
+          "null_count": 85,
+          "null_percentage": 0.1944
+        },
+        {
+          "column_name": "Category",
+          "data_type": "str",
+          "null_count": 5,
+          "null_percentage": 0.0114
+        },
+        {
+          "column_name": "MP Name",
+          "data_type": "str",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "Constituency",
+          "data_type": "str",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "State",
+          "data_type": "str",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "Final Amount (₹)",
+          "data_type": "float64",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "Completed Date",
+          "data_type": "str",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "Has Images",
+          "data_type": "bool",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "Average Rating",
+          "data_type": "float64",
+          "null_count": 43731,
+          "null_percentage": 99.9909
+        },
+        {
+          "column_name": "IDA",
+          "data_type": "str",
+          "null_count": 0,
+          "null_percentage": 0.0
+        }
+      ]
+    },
+    "expenditures.csv": {
+      "filename": "expenditures.csv",
+      "source_location": "D:\\MPLADS(SIH)\\expenditures.csv",
+      "target_location": "D:\\MPLADS(SIH)\\data\\raw\\expenditures.csv",
+      "acquisition_date_utc": "2026-09-16T10:27:00.530423+00:00",
+      "sha256_checksum": "8fba3f0dc7870ec00681638c39550b301f0b0923e9e3e6b9bbfb453351ca77d9",
+      "size_bytes": 23247025,
+      "row_count": 107683,
+      "column_count": 9,
+      "columns": [
+        {
+          "column_name": "MP Name",
+          "data_type": "str",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "Constituency",
+          "data_type": "str",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "State",
+          "data_type": "str",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "Work Description",
+          "data_type": "str",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "Vendor",
+          "data_type": "str",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "IDA",
+          "data_type": "str",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "Expenditure Amount (₹)",
+          "data_type": "float64",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "Expenditure Date",
+          "data_type": "str",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "Payment Status",
+          "data_type": "str",
+          "null_count": 0,
+          "null_percentage": 0.0
+        }
+      ]
+    },
+    "mp_summary.csv": {
+      "filename": "mp_summary.csv",
+      "source_location": "D:\\MPLADS(SIH)\\mp_summary.csv",
+      "target_location": "D:\\MPLADS(SIH)\\data\\raw\\mp_summary.csv",
+      "acquisition_date_utc": "2026-09-16T10:27:00.544255+00:00",
+      "sha256_checksum": "d66751d4b579df95d372f08e037967a493ee1e49829598ef9e930f0ce887b4f0",
+      "size_bytes": 79313,
+      "row_count": 774,
+      "column_count": 13,
+      "columns": [
+        {
+          "column_name": "MP Name",
+          "data_type": "str",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "Constituency",
+          "data_type": "str",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "State",
+          "data_type": "str",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "Allocated Amount (₹)",
+          "data_type": "float64",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "Total Expenditure (₹)",
+          "data_type": "float64",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "Utilization %",
+          "data_type": "float64",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "Completed Works",
+          "data_type": "int64",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "Recommended Works",
+          "data_type": "int64",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "Completion Rate %",
+          "data_type": "float64",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "Unspent Amount (₹)",
+          "data_type": "float64",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "Transaction Count",
+          "data_type": "int64",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "Successful Payments",
+          "data_type": "int64",
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        {
+          "column_name": "Pending Payments",
+          "data_type": "int64",
+          "null_count": 0,
+          "null_percentage": 0.0
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,66 @@
+# MPLADS AI Anomaly Detection & Monitoring System Configuration
+# Pipeline Version: 10.0
+# Last Updated: 2026-09-01
+
+paths:
+  raw:
+    projects: "data/raw/projects.csv"
+    work_by_type: "data/raw/work_by_type.csv"
+    mp_summary: "data/raw/mp_summary.csv"
+  processed:
+    projects_clean: "data/processed/projects_clean.csv"
+    work_by_type_clean: "data/processed/work_by_type_clean.csv"
+    mp_summary_clean: "data/processed/mp_summary_clean.csv"
+    statistical_anomaly_results: "data/processed/statistical_anomaly_results.csv"
+    isolation_forest_results: "data/processed/isolation_forest_results.csv"
+    final_risk_scores: "data/processed/final_risk_scores.csv"
+    mplads_anomaly_results: "data/processed/mplads_anomaly_results.csv"
+    potentially_similar_projects: "data/processed/potentially_similar_projects.csv"
+  features:
+    financial_features: "data/features/financial_features.csv"
+    temporal_features: "data/features/temporal_features.csv"
+    vendor_features: "data/features/vendor_features.csv"
+    nlp_features: "data/features/nlp_features.csv"
+    isolation_forest_features: "data/features/isolation_forest_features.csv"
+    feature_dictionary: "data/features/feature_dictionary.csv"
+  models:
+    isolation_forest: "models/isolation_forest.joblib"
+    scaler: "models/scaler.joblib"
+  reports:
+    figures_dir: "reports/figures"
+    model_evaluation: "reports/model_evaluation.md"
+    anomaly_stability: "reports/anomaly_stability.csv"
+    executive_summary: "reports/EXECUTIVE_SUMMARY.md"
+  audit:
+    review_log: "data/audit/review_log.csv"
+  logs:
+    pipeline_log: "logs/pipeline.log"
+  database:
+    db_path: "data/mplads_database.db"
+    type: "sqlite"
+    fallback_to_csv: true
+
+isolation_forest:
+  n_estimators: 100
+  contamination: 0.05
+  random_state: 42
+
+risk_scoring:
+  weights:
+    financial: 0.30
+    temporal: 0.20
+    isolation_forest: 0.25
+    vendor: 0.15
+    works_risk: 0.10
+  thresholds:
+    low_max: 39.99
+    medium_max: 69.99
+    # score >= 70.00 -> HIGH
+
+statistical_baselines:
+  z_score_threshold: 2.5
+  min_group_size: 10
+
+nlp:
+  similarity_threshold: 0.85
+  top_n_candidates: 50

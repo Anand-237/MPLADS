@@ -1,0 +1,7 @@
+log_id,work_id,review_status,reviewer_notes,reviewer_id,review_timestamp,ai_risk_score_at_review,ai_risk_category_at_review
+AUDIT_000001,61773,Needs Further Review,High expenditure deviation and YoY project approval spike require manual site audit.,AUDITOR_OFFICER_01,2026-09-01T17:04:33.386176+00:00,80.18,HIGH
+AUDIT_000002,61773,Needs Further Review,High expenditure deviation and YoY project approval spike require manual site audit.,AUDITOR_OFFICER_01,2026-09-01T17:17:50.813876+00:00,80.18,HIGH
+AUDIT_000003,61773,Verified Normal,,AUDITOR_OFFICER_01,2026-09-08T05:15:09.577485+00:00,71.7,HIGH
+AUDIT_000004,837,Manual Investigation Required,,AUDITOR_OFFICER_01,2026-09-16T10:56:09.865062+00:00,51.77,HIGH
+AUDIT_000005,837,Manual Investigation Required,,AUDITOR_OFFICER_01,2026-09-16T12:46:26.021087+00:00,51.77,HIGH
+AUDIT_000006,837,Manual Investigation Required,,AUDITOR_OFFICER_01,2026-09-16T12:46:35.317929+00:00,51.77,HIGH

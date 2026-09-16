@@ -1,0 +1,34 @@
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/*.log
+
+# Temporary Scratch Files
+scratch/
+
+# Heavy Binary Models
+models/*.joblib
+
+# Node dependencies & build outputs
+node_modules/
+dist/
+build/
+

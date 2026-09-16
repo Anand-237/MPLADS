@@ -1,0 +1,26 @@
+feature_name,source_column,description,formula,data_type,missing_percentage,used_for_model
+work_id,work_id,Unique project identifier,Raw identifier string,string,0.00%,False
+project_status,project_status,Status of project (Recommended vs Completed),Raw category string,string,0.00%,False
+state,state,State / Union Territory name,Raw geographical string,string,0.00%,False
+constituency,constituency,Lok Sabha / Rajya Sabha constituency name,Raw geographical string,string,0.00%,False
+effective_amount,final_amount / recommended_amount,Sanctioned or completed project expenditure amount in Rupees,"COALESCE(final_amount, recommended_amount)",float64,0.00%,True
+cost_deviation,effective_amount,Z-score of project effective cost within State cohort,(cost - mean_state) / std_state,float64,0.00%,True
+state_cost_percentile,effective_amount,Percentile rank of effective cost within State cohort,Percentile(effective_amount | State),float64,0.00%,True
+constituency_cost_percentile,effective_amount,Percentile rank of effective cost within Constituency cohort,Percentile(effective_amount | Constituency),float64,0.03%,True
+release_ratio,total_expenditure / allocated_amount,Sponsoring Member of Parliament fund utilization ratio,total_expenditure / allocated_amount,float64,0.00%,True
+recommendation_sanction_ratio,recommended_amount,Ratio of recommended amount relative to state mean recommendation,recommended_amount / mean_state(recommended_amount),float64,34.02%,True
+is_impossible_date_sequence,"completed_date, recommendation_date",Binary indicator for invalid date ordering (completion before recommendation),"IF(completed_date < recommendation_date, 1, 0)",int64,0.00%,True
+is_negative_duration,"completed_date, recommendation_date",Binary indicator for negative project duration (duplicate of date sequence check),"IF(duration < 0, 1, 0)",int64,0.00%,False
+is_covid_era,recommendation_year / completed_year,Binary indicator for project recommendation or completion during COVID window (zero variance in dataset),"IF(year IN (2020, 2021), 1, 0)",int64,0.00%,False
+year_over_year_change,project_count,Percentage change in constituency project volume year-over-year,((count_t - count_t-1) / count_t-1) * 100,float64,0.35%,True
+description_length,work_description,Character length of raw work description text,LEN(work_description),int64,0.00%,True
+word_count,work_description,Total word count of raw work description text,WORD_COUNT(work_description),int64,0.00%,True
+tfidf_mean,work_description,"Mean TF-IDF feature weight across all 10,000 vocabulary terms",MEAN(TFIDF_Vector),float64,0.00%,True
+tfidf_max,work_description,Maximum TF-IDF feature weight for dominant description term,MAX(TFIDF_Vector),float64,0.00%,True
+nearest_similarity_score,work_description,Highest cosine text similarity score with any other project in constituency cohort,"MAX_j(CosineSim(d_i, d_j))",float32,0.00%,True
+similar_project_count,work_description,Count of cohort projects exhibiting cosine text similarity >= 0.85,"SUM_j(CosineSim(d_i, d_j) >= 0.85)",int32,0.00%,True
+constituency_max_vendor_share,vendor_share_of_constituency_expenditure,Maximum vendor expenditure share in constituency (vendor concentration measure),MAX(vendor_const_share | Constituency),float64,0.41%,True
+constituency_avg_vendor_transaction,average_vendor_transaction,Mean vendor transaction amount across constituency vendors,MEAN(vendor_avg_tx | Constituency),float64,0.41%,True
+constituency_vendor_count,vendor,Total unique vendors active in constituency,COUNT(DISTINCT vendor | Constituency),float64,0.41%,True
+constituency_avg_vendor_repeat_rate,vendor_repeat_rate,Mean vendor repeat transaction rate in constituency,MEAN(repeat_rate | Constituency),float64,0.41%,True
+constituency_pending_payment_ratio,pending_payment_ratio,Mean pending payment ratio across constituency vendors,MEAN(pending_ratio | Constituency),float64,0.41%,True
