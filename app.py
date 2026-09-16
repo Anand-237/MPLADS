@@ -432,11 +432,11 @@ nav_selection = st.sidebar.radio(
         "🗺️ Risk Map",
         "📊 Overview",
         "🆕 New Work Screening",
-        "🔎 Project Explorer",
-        "📋 Project Detail",
+        "🔍 Project Explorer",
+        "📄 Project Detail",
         "📈 Historical Benchmark",
-        "📄 Similar Projects (NLP)",
-        "🛡️ Human Verification Audit"
+        "🔎 Similar Projects (NLP)",
+        "📋 Human Verification Audit"
     ]
 )
 
@@ -519,8 +519,8 @@ if nav_selection == "📊 Overview":
 # -----------------------------------------------------------------------------
 # 2. PROJECT EXPLORER SECTION
 # -----------------------------------------------------------------------------
-elif nav_selection == "🔎 Project Explorer":
-    st.header("🔎 Interactive Project Explorer & Multi-Criteria Filter")
+elif nav_selection == "🔍 Project Explorer":
+    st.header("🔍 Interactive Project Explorer & Multi-Criteria Filter")
     
     with st.expander("🔻 Search & Filter Options", expanded=True):
         f_col1, f_col2, f_col3 = st.columns(3)
@@ -581,8 +581,8 @@ elif nav_selection == "🔎 Project Explorer":
 # -----------------------------------------------------------------------------
 # 3. PROJECT DETAIL SECTION
 # -----------------------------------------------------------------------------
-elif nav_selection == "📋 Project Detail":
-    st.header("📋 Comprehensive Project Audit & Risk Detail")
+elif nav_selection == "📄 Project Detail":
+    st.header("📄 Comprehensive Project Audit & Risk Detail")
     
     # Filter dropdown by Risk Category or State for fast browsing
     d_f1, d_f2 = st.columns(2)
@@ -769,8 +769,8 @@ elif nav_selection == "📈 Historical Benchmark":
 # -----------------------------------------------------------------------------
 # 5. SIMILAR PROJECTS SECTION (NLP)
 # -----------------------------------------------------------------------------
-elif nav_selection == "📄 Similar Projects (NLP)":
-    st.header("📄 Potentially Similar Project Work Descriptions (NLP Analysis)")
+elif nav_selection == "🔎 Similar Projects (NLP)":
+    st.header("🔎 Potentially Similar Project Work Descriptions (NLP Analysis)")
     st.markdown("Discover projects with high text similarity (>= 85% Cosine Similarity) using TF-IDF N-gram analysis.")
     
     tab_mode1, tab_mode2 = st.tabs([
@@ -895,8 +895,8 @@ elif nav_selection == "📄 Similar Projects (NLP)":
 # -----------------------------------------------------------------------------
 # 6. HUMAN VERIFICATION AUDIT SECTION (STAGE 9 ENHANCED)
 # -----------------------------------------------------------------------------
-elif nav_selection == "🛡️ Human Verification Audit":
-    st.header("🛡️ Stage 9: Human-in-the-Loop Verification & Audit Trail Manager")
+elif nav_selection == "📋 Human Verification Audit":
+    st.header("📋 Stage 9: Human-in-the-Loop Verification & Audit Trail Manager")
     st.markdown("Auditors investigate AI-generated anomaly signals, review full evidence vectors, and record official audit decisions.")
     
     v_f1, v_f2, v_f3 = st.columns(3)
