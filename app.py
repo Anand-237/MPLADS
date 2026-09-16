@@ -203,33 +203,48 @@ st.markdown("""
         color: #0F172A !important;
     }
 
-    /* Metrics & Card Containers */
+    /* Metrics & Card Containers - Compact & Proportionate Sizing */
     [data-testid="stMetric"], .metric-card {
         background-color: #FFFFFF !important;
         border: 1px solid #CBD5E1 !important;
-        border-radius: 12px !important;
-        padding: 1.25rem 1.5rem !important;
-        box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04) !important;
-        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        border-radius: 10px !important;
+        padding: 0.85rem 1.0rem !important;
+        box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04) !important;
+        transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        overflow: hidden !important;
     }
     
     [data-testid="stMetric"]:hover, .metric-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 12px 28px rgba(15, 23, 42, 0.1) !important;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08) !important;
         border-color: #94A3B8 !important;
     }
     
+    /* Responsive & Fully Visible Metric Values Without Truncation Points */
     [data-testid="stMetricValue"] {
-        font-family: 'JetBrains Mono', monospace !important;
-        font-size: 2.2rem !important;
-        font-weight: 800 !important;
+        font-family: 'JetBrains Mono', -apple-system, monospace !important;
+        font-size: clamp(1.0rem, 1.2vw, 1.45rem) !important;
+        font-weight: 700 !important;
         color: #0F172A !important;
+        white-space: nowrap !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+        word-break: normal !important;
+    }
+
+    [data-testid="stMetricValue"] > div {
+        font-size: clamp(1.0rem, 1.2vw, 1.45rem) !important;
+        white-space: nowrap !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
     }
 
     [data-testid="stMetricLabel"] {
-        font-size: 1.05rem !important;
+        font-size: 0.95rem !important;
         font-weight: 600 !important;
         color: #475569 !important;
+        margin-bottom: 0.2rem !important;
+        white-space: nowrap !important;
     }
 
     /* Form Field Labels */
