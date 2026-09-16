@@ -77,13 +77,24 @@ st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap');
     
-    /* Global Text Sizing & Viewport Scaling */
+    /* Global Viewport & Light Container Background */
     html, body, [data-testid="stAppViewContainer"] {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-        background-color: #F7F9FB;
-        color: #0F172A;
+        background-color: #F7F9FB !important;
+        color: #0F172A !important;
         font-size: 1.15rem !important;
         line-height: 1.6;
+    }
+
+    /* Remove Black Top Header Bar */
+    header[data-testid="stHeader"] {
+        background-color: #F7F9FB !important;
+        background: transparent !important;
+    }
+
+    /* Ensure main view container is light background */
+    [data-testid="stAppViewContainer"] > .main {
+        background-color: #F7F9FB !important;
     }
     
     [data-testid="stAppViewContainer"] {
@@ -102,7 +113,12 @@ st.markdown("""
         padding-top: 1.0rem;
     }
     
-    [data-testid="stSidebar"] * {
+    [data-testid="stSidebar"] *,
+    [data-testid="stSidebar"] label,
+    [data-testid="stSidebar"] p,
+    [data-testid="stSidebar"] span,
+    [data-testid="stSidebar"] div,
+    [data-testid="stSidebar"] caption {
         color: #F8FAFC !important;
     }
 
@@ -128,22 +144,22 @@ st.markdown("""
         transform: translateX(4px);
     }
 
-    /* Typography Font Sizing */
+    /* Typography Font Sizing & High Contrast Labels */
     .main-title {
         font-size: 2.75rem !important;
         font-weight: 800 !important;
         letter-spacing: -0.03em;
-        color: #0F172A;
+        color: #0F172A !important;
         margin-bottom: 0.3rem;
     }
     
     .sub-title {
         font-size: 1.3rem !important;
-        color: #475569;
+        color: #475569 !important;
         margin-bottom: 1.8rem;
     }
 
-    h1, h2, h3 {
+    h1, h2, h3, h4 {
         font-weight: 700 !important;
         letter-spacing: -0.02em !important;
         color: #0F172A !important;
@@ -154,12 +170,40 @@ st.markdown("""
     h3 { font-size: 1.6rem !important; }
     h4 { font-size: 1.35rem !important; }
 
-    p, span, div, label {
-        font-size: 1.1rem !important;
+    /* Main view labels and text */
+    [data-testid="stAppViewContainer"] .main label,
+    [data-testid="stAppViewContainer"] .main p,
+    [data-testid="stAppViewContainer"] .main span,
+    [data-testid="stAppViewContainer"] .main div[data-testid="stMarkdownContainer"] p {
+        color: #0F172A !important;
     }
 
-    /* Metrics & Card Containers with Ambient Shadow & Hover Lift */
-    [data-testid="stMetric"], .metric-card, div[data-testid="stExpander"] {
+    /* Expanders with Clean White Background & Visible Labels */
+    div[data-testid="stExpander"] {
+        background-color: #FFFFFF !important;
+        border: 1px solid #CBD5E1 !important;
+        border-radius: 12px !important;
+        box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04) !important;
+    }
+    
+    div[data-testid="stExpander"] summary {
+        background-color: #FFFFFF !important;
+        border-radius: 12px !important;
+        color: #0F172A !important;
+        font-weight: 700 !important;
+    }
+    
+    div[data-testid="stExpander"] summary * {
+        color: #0F172A !important;
+    }
+    
+    div[data-testid="stExpander"] div[role="region"] {
+        background-color: #FFFFFF !important;
+        color: #0F172A !important;
+    }
+
+    /* Metrics & Card Containers */
+    [data-testid="stMetric"], .metric-card {
         background-color: #FFFFFF !important;
         border: 1px solid #CBD5E1 !important;
         border-radius: 12px !important;
@@ -174,7 +218,6 @@ st.markdown("""
         border-color: #94A3B8 !important;
     }
     
-    /* Monospace Metric Values (Larger Size) */
     [data-testid="stMetricValue"] {
         font-family: 'JetBrains Mono', monospace !important;
         font-size: 2.2rem !important;
@@ -187,8 +230,36 @@ st.markdown("""
         font-weight: 600 !important;
         color: #475569 !important;
     }
+
+    /* Multiselect / Selectbox & Input Dropdown Controls */
+    div[data-baseweb="select"] > div {
+        background-color: #FFFFFF !important;
+        border-color: #CBD5E1 !important;
+        color: #0F172A !important;
+        border-radius: 8px !important;
+    }
+
+    div[data-baseweb="select"] * {
+        color: #0F172A !important;
+    }
+
+    div[data-baseweb="popover"], div[data-baseweb="menu"] {
+        background-color: #FFFFFF !important;
+        color: #0F172A !important;
+    }
+
+    div[data-baseweb="option"] {
+        background-color: #FFFFFF !important;
+        color: #0F172A !important;
+    }
+
+    /* Input Numbers and Buttons */
+    div[data-baseweb="input"] input {
+        background-color: #FFFFFF !important;
+        color: #0F172A !important;
+    }
     
-    /* Dataframe & Table Typography */
+    /* Table Typography */
     .stDataFrame, table {
         font-size: 1.05rem !important;
     }
@@ -200,7 +271,7 @@ st.markdown("""
         color: #334155 !important;
     }
 
-    /* Smooth Tab Switching Animation */
+    /* Tabs Styling */
     [data-baseweb="tab-list"] {
         gap: 10px;
         background-color: #E2E8F0;
@@ -214,9 +285,15 @@ st.markdown("""
         font-size: 1.15rem !important;
         font-weight: 700 !important;
         transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        color: #475569 !important;
+    }
+
+    [data-baseweb="tab"][aria-selected="true"] {
+        background-color: #FFFFFF !important;
+        color: #0F172A !important;
     }
     
-    /* Status Badges with Micro-Glow */
+    /* Status Badges */
     .badge-high {
         background-color: #FEE2E2;
         color: #991B1B;
@@ -1560,11 +1637,13 @@ elif nav_selection == "🗺️ Risk Map":
             fig_map.update_geos(
                 fitbounds="locations",
                 visible=False,
-                bgcolor="rgba(248, 250, 252, 1)"
+                bgcolor="rgba(0,0,0,0)"
             )
             fig_map.update_layout(
                 margin={"r":0,"t":0,"l":0,"b":0},
                 height=720,
+                paper_bgcolor="rgba(0,0,0,0)",
+                plot_bgcolor="rgba(0,0,0,0)",
                 coloraxis_colorbar=dict(
                     title="Risk Score",
                     thicknessmode="pixels", thickness=14,
